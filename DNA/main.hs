@@ -4,8 +4,8 @@ input = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
 
 main :: IO ()
 main =
-  putStrLn $ unwords $ map (\l -> show $ occurences l input) "ACGT"
+  putStrLn $ unwords $ map (\l -> show $ occurrences l input) "ACGT"
 
-occurences :: Char -> String -> Int
-occurences letter str =
+occurrences :: Char -> String -> Int
+occurrences letter str =
   length $ filter (\l -> l == letter) str
