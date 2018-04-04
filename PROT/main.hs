@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List (tails, intercalate)
+import Data.List (intercalate)
 import Data.Monoid ((<>))
 
 import qualified Data.Map as M (Map, fromList, lookup)
