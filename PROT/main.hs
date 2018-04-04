@@ -1,7 +1,6 @@
 module Main where
 
 import Data.List (intercalate)
-import Data.Monoid ((<>))
 
 import qualified Data.Map as M (Map, fromList, lookup)
 
@@ -35,6 +34,6 @@ listOfTuples (k:v:t) = (k, v) : listOfTuples t
 splitLen :: Int -> [a] -> [[a]]
 splitLen len str =
   if length str >= len then
-    [take len str] <> (splitLen len $ (iterate tail str !! len))
+    take len str : (splitLen len $ (iterate tail str !! len))
   else
     []

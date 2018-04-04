@@ -1,7 +1,6 @@
 module Main where
 
 import Data.List (intercalate)
-import Data.Monoid ((<>))
 
 input = ">Rosalind_6404\nCCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC\nTCCCACTAATAATTCTGAGG\n>Rosalind_5959\nCCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCT\nATATCCATTTGTCAGCAGACACGC\n>Rosalind_0808\nCCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC\nTGGGAACCTGCGGGCAGTAGGTGGAAT"
 
@@ -22,8 +21,8 @@ parsePairs str =
     go :: [String] -> [(String, String)]
     go [] = []
     go (key:lns) =
-      [(drop 1 key, intercalate "" $ takeWhile (not . startsWith '>') lns)]
-        <> (go $ dropWhile (not . startsWith '>') lns)
+      (drop 1 key, intercalate "" $ takeWhile (not . startsWith '>') lns)
+        : (go $ dropWhile (not . startsWith '>') lns)
 
 startsWith :: Char -> String -> Bool
 startsWith c str =
