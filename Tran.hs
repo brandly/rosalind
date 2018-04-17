@@ -1,6 +1,7 @@
 module Tran (tran) where
 
 import Data.List (intercalate)
+import Gc (parsePairs)
 
 input :: String
 input = ">Rosalind_0209\nGCAACGCACAACGAAAACCCTTAGGGACTGGATTATTTCGTGATCGTTGTAGTTATTGGA\nAGTACGGGCATCAACCCAGTT\n>Rosalind_2200\nTTATCTGACAAAGAAAGCCGTCAACGGCTGGATAATTTCGCGATCGTGCTGGTTACTGGC\nGGTACGAGTGTTCCTTTGGGT"
@@ -31,18 +32,3 @@ isTransition _ = False
 
 isTransversion :: (Char, Char) -> Bool
 isTransversion (a, b) = a /= b && (not $ isTransition (a, b))
-
--- wrote this for GC
-parsePairs :: String -> [(String, String)]
-parsePairs str =
-  go $ lines str
-  where
-    go :: [String] -> [(String, String)]
-    go [] = []
-    go (key:lns) =
-      (drop 1 key, intercalate "" $ takeWhile (not . startsWith '>') lns)
-        : (go $ dropWhile (not . startsWith '>') lns)
-
-startsWith :: Char -> String -> Bool
-startsWith c str =
-  str !! 0 == c

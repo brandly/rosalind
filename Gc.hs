@@ -1,4 +1,4 @@
-module Gc (gc) where
+module Gc (gc, parsePairs) where
 
 import Data.List (intercalate)
 

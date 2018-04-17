@@ -1,4 +1,4 @@
-module Prot (prot) where
+module Prot (prot, listOfTuples, splitLen, codonToAmino) where
 
 import Data.List (intercalate)
 

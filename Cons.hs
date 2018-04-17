@@ -1,6 +1,7 @@
 module Cons (cons) where
 
 import Data.List (intercalate)
+import Gc (parsePairs)
 
 input :: String
 input = ">Rosalind_1\nATCCAGCT\n>Rosalind_2\nGGGCAACT\n>Rosalind_3\nATGGATCT\n>Rosalind_4\nAAGCAACC\n>Rosalind_5\nTTGGAACT\n>Rosalind_6\nATGCCATT\n>Rosalind_7\nATGGCACT"
@@ -52,18 +53,3 @@ increment list c =
       (c, num + 1) : filter (\(char, _) -> char /= c) list
     Nothing ->
       (c, 1) : list
-
--- wrote this for GC
-parsePairs :: String -> [(String, String)]
-parsePairs str =
-  go $ lines str
-  where
-    go :: [String] -> [(String, String)]
-    go [] = []
-    go (key:lns) =
-      (drop 1 key, intercalate "" $ takeWhile (not . startsWith '>') lns)
-        : (go $ dropWhile (not . startsWith '>') lns)
-
-startsWith :: Char -> String -> Bool
-startsWith c str =
-  str !! 0 == c
