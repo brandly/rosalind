@@ -1,10 +1,10 @@
-module Main where
+module Perm (perm) where
 
 import Data.List (permutations)
 
-main :: IO ()
-main =
-  putStrLn $ unlines $ header : map unwords perms
+perm :: String
+perm =
+  unlines $ header : map unwords perms
   where
     n = 3
 

@@ -1,12 +1,13 @@
-module Main where
+module Cons (cons) where
 
 import Data.List (intercalate)
 
+input :: String
 input = ">Rosalind_1\nATCCAGCT\n>Rosalind_2\nGGGCAACT\n>Rosalind_3\nATGGATCT\n>Rosalind_4\nAAGCAACC\n>Rosalind_5\nTTGGAACT\n>Rosalind_6\nATGCCATT\n>Rosalind_7\nATGGCACT"
 
-main :: IO ()
-main =
-  putStrLn $ unlines $ [consensus finalCounts, table finalCounts]
+cons :: String
+cons =
+  unlines $ [consensus finalCounts, table finalCounts]
   where
     finalCounts :: [[(Char, Int)]]
     finalCounts = foldl update initCounts values

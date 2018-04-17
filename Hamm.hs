@@ -1,11 +1,9 @@
-module Main where
+module Hamm (hamm) where
 
 input = "GAGCCTACTAACGGGAT\nCATCGTAATGACGGCCT"
 
-main :: IO ()
-main =
-  putStrLn
-    $ show
-    $ length
+hamm :: Int
+hamm =
+  length
     $ filter (\(a, b) -> a /= b)
     $ zip (words input !! 0) (words input !! 1)

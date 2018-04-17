@@ -1,12 +1,12 @@
-module Main where
+module Gc (gc) where
 
 import Data.List (intercalate)
 
 input = ">Rosalind_6404\nCCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC\nTCCCACTAATAATTCTGAGG\n>Rosalind_5959\nCCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCT\nATATCCATTTGTCAGCAGACACGC\n>Rosalind_0808\nCCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC\nTGGGAACCTGCGGGCAGTAGGTGGAAT"
 
-main :: IO ()
-main =
-  putStrLn $ intercalate "\n" [fst bigPair, show $ (*100) $ snd bigPair]
+gc :: String
+gc =
+  intercalate "\n" [fst bigPair, show $ (*100) $ snd bigPair]
   where
     bigPair :: (String, Double)
     bigPair =

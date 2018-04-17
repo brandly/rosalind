@@ -1,7 +1,7 @@
-module Main where
+module Lexf (lexf) where
 
-main :: IO ()
-main = putStrLn $ unlines $ combos 2 "AGCT"
+lexf :: String
+lexf = unlines $ combos 2 "AGCT"
 
 combos :: Int -> String -> [String]
 combos 0 _ = []

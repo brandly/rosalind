@@ -1,10 +1,10 @@
-module Main where
+module Dna (dna) where
 
 input = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
 
-main :: IO ()
-main =
-  putStrLn $ unwords $ map (\l -> show $ occurrences l input) "ACGT"
+dna :: String
+dna =
+  unwords $ map (\l -> show $ occurrences l input) "ACGT"
 
 occurrences :: Char -> String -> Int
 occurrences letter str =

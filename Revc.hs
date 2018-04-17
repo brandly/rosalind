@@ -1,11 +1,10 @@
-module Main where
+module Revc (revc) where
 
 input :: String
 input = "AAAACCCGGT"
 
-main :: IO ()
-main =
-  putStrLn $ map complement $ reverse input
+revc :: String
+revc = map complement $ reverse input
 
 complement :: Char -> Char
 complement 'A' = 'T'

@@ -1,14 +1,13 @@
-module Main where
+module Tran (tran) where
 
 import Data.List (intercalate)
 
+input :: String
 input = ">Rosalind_0209\nGCAACGCACAACGAAAACCCTTAGGGACTGGATTATTTCGTGATCGTTGTAGTTATTGGA\nAGTACGGGCATCAACCCAGTT\n>Rosalind_2200\nTTATCTGACAAAGAAAGCCGTCAACGGCTGGATAATTTCGCGATCGTGCTGGTTACTGGC\nGGTACGAGTGTTCCTTTGGGT"
 
-main :: IO ()
-main =
-  putStrLn
-    $ show
-    $ ratio
+tran :: Double
+tran =
+  ratio
     $ transitionsTransversions (dna !! 0) (dna !! 1)
   where
     dna = map snd $ parsePairs input

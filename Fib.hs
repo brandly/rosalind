@@ -1,8 +1,7 @@
-module Main where
+module Fib (fib) where
 
-main :: IO ()
-main =
-  putStrLn $ show $ rabbits 5 3
+fib :: Int
+fib = rabbits 5 3
 
 rabbits :: Int -> Int -> Int
 rabbits 1 _ = 1

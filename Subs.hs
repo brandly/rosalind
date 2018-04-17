@@ -1,11 +1,10 @@
-module Main where
+module Subs (subs) where
 
 input = "GATATATGCATATACTT\nATAT"
 
-main :: IO ()
-main =
-  putStrLn
-    $ unwords
+subs :: String
+subs =
+  unwords
     $ map (show . fst)
     $ filter ((== needle) . snd)
     $ indexedSubstrings (length needle) haystack
