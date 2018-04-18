@@ -3,9 +3,7 @@
 module Splc (splc) where
 
 import Data.List (intercalate)
-import Gc (parsePairs)
-import Rna (toRna)
-import Prot (listOfTuples, splitLen, codonToAmino)
+import Util (parsePairs, listOfTuples, splitLen, codonToAmino, toRna)
 import qualified Data.Text as T
 import qualified Data.Map as M (Map, fromList, lookup)
 

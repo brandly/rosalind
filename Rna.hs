@@ -1,9 +1,8 @@
-module Rna (rna, toRna) where
+module Rna (rna) where
+
+import Util (toRna)
 
 input = "GATGGAACTTGACTACGTAAATT"
 
 rna :: String
 rna = toRna input
-
-toRna :: String -> String
-toRna = map (\l -> if l == 'T' then 'U' else l)

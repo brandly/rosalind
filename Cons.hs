@@ -1,7 +1,7 @@
 module Cons (cons) where
 
 import Data.List (intercalate)
-import Gc (parsePairs)
+import Util (parsePairs)
 
 input :: String
 input = ">Rosalind_1\nATCCAGCT\n>Rosalind_2\nGGGCAACT\n>Rosalind_3\nATGGATCT\n>Rosalind_4\nAAGCAACC\n>Rosalind_5\nTTGGAACT\n>Rosalind_6\nATGCCATT\n>Rosalind_7\nATGGCACT"
