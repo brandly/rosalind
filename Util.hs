@@ -1,4 +1,11 @@
-module Util (toRna, parsePairs, listOfTuples, splitLen, codonToAmino) where
+module Util (
+  toRna,
+  parsePairs,
+  listOfTuples,
+  splitLen,
+  codonToAmino,
+  complement
+) where
 
 import Data.List (intercalate)
 import qualified Data.Map as M (Map, fromList, lookup)
@@ -47,3 +54,11 @@ splitLen len str =
     take len str : (splitLen len $ (iterate tail str !! len))
   else
     []
+
+
+complement :: Char -> Char
+complement 'A' = 'T'
+complement 'T' = 'A'
+complement 'G' = 'C'
+complement 'C' = 'G'
+complement _   = undefined
