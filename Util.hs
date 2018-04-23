@@ -4,7 +4,8 @@ module Util (
   listOfTuples,
   splitLen,
   codonToAmino,
-  complement
+  complement,
+  lastN
 ) where
 
 import Data.List (intercalate)
@@ -62,3 +63,7 @@ complement 'T' = 'A'
 complement 'G' = 'C'
 complement 'C' = 'G'
 complement _   = undefined
+
+
+lastN :: Int -> [a] -> [a]
+lastN n xs = drop (length xs - n) xs
